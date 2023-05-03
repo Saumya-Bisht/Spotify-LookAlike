@@ -10,7 +10,7 @@ function Sidebar() {
         <div >
             <Link className='links' to="/"><h3><MdOutlineHome/> Home</h3></Link>
             <Link className='links' to="/search"><h3><MdOutlineSearch/> Search</h3></Link>
-            <Link className='links' to="library"><h3><MdLibraryMusic/> Your Library</h3></Link>
+            <Link className='links' to="/library"><h3><MdLibraryMusic/> Your Library</h3></Link>
         </div>
         <div>
            <Link className='links' to="/search"> <h3><MdOutlineCreateNewFolder/> Create PLaylists</h3></Link>
