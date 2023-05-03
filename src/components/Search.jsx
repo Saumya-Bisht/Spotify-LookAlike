@@ -23,9 +23,29 @@ function Search() {
     }
           }).then((res)=>res.json()).then((data)=>{setVid(data);console.log(data)})
       },[])
-
+      let psty={
+        color:"gray",
+        fontWeight:"light",
+        marginTop:"-7%",
+        
+      }
   const show=()=>{
-     setButton(inp)
+if(inp!==""){
+     setButton(<div  style={{display:"flex",flexWrap:"wrap"}} >
+          {vid.episodes.items.map((ele)=>{
+            return <div style={{boxShadow:"0px 0px 10px 3px #121212",borderRadius:"10px",padding:"10px",margin:"10px",width:"13vw",display:"flex",flexDirection:"column"}}>
+              <img  width="100%" src={ele.data.coverArt.sources[1].url} alt="img"/>
+              <p>{ele.data.name}</p>
+              {/* <p style={psty}>{ele.data.uri}</p> */}
+              <p style={psty}>{ele.data.contentRating.label}</p>
+              </div>
+          })}
+     </div>)}
+     else{
+      setButton(<h1>
+        Search for some trending Tracks...
+      </h1>)
+     }
      console.log(vid)
   }
   const clear=()=>{
