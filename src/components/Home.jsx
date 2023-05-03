@@ -33,8 +33,8 @@ let psty={
   return (
     <div style={{backgroundColor:"#212121"}}>
         <h2>Popular Playlists</h2>
-        {/* {console.log(vid)}
-         <div style={{display:"flex",flexWrap:"wrap"}}>{vid.playlists.items?.map((ele)=>{
+        {console.log(vid)}
+         <div style={{display:"flex",flexWrap:"wrap"}}>{Array.isArray(vid.playlists.items) && vid.playlists.items?.map((ele)=>{
             return (<div style={{boxShadow:"0px 0px 10px 3px #121212",borderRadius:"10px",padding:"10px",margin:"10px",width:"13vw",display:"flex",flexDirection:"column"}}>
             <Link style={linksty} to="/details"><img  width="100%" src={ele.data.images.items[0].sources[0].url} alt="img"/>
                <p> {ele.data.name} </p>
@@ -46,7 +46,7 @@ let psty={
         })}</div>
 
         <h2>Popular Podcasts</h2>
-        <div style={{display:"flex",flexWrap:"wrap"}}>{vid.podcasts.items?.map((ele)=>{
+        <div style={{display:"flex",flexWrap:"wrap"}}>{Array.isArray(vid.podcasts.items) && vid.podcasts.items?.map((ele)=>{
             return (<div style={{boxShadow:"0px 0px 10px 3px #121212",borderRadius:"10px",padding:"10px",margin:"10px",width:"13vw",display:"flex",flexDirection:"column"}}>
             <Link style={linksty} to="/details"><img width="100%" src={ele.data.coverArt.sources[1].url} alt="img"/>
                <p> {ele.data.name} </p>
@@ -58,7 +58,7 @@ let psty={
         })}</div>
 
 <h2>Popular Artists</h2>
-        <div style={{display:"flex",flexWrap:"wrap"}}>{vid.artists.items?.map((ele)=>{
+        <div style={{display:"flex",flexWrap:"wrap"}}>{Array.isArray(vid.artists.items) &&  vid.artists.items?.map((ele)=>{
             return (<div style={{boxShadow:"0px 0px 10px 3px #121212",borderRadius:"10px",padding:"10px",margin:"10px",width:"13vw",display:"flex",flexDirection:"column"}}>
            <Link style={linksty} to="/details"> <img style={{borderRadius:"50%"}} width="100%" src={ele.data.visuals.avatarImage.sources[0].url} alt="img"/>
                <p> {ele.data.profile.name} </p></Link>
@@ -67,7 +67,7 @@ let psty={
                
                
                )
-       })}</div>  */}
+       })}</div> 
      
     </div>
   )
