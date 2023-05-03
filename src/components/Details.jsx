@@ -40,7 +40,7 @@ function Details() {
                 <th style={he}><MdOutlineWatchLater/></th>
             </tr>
             <tr>
-                <td style={{ borderSpacing: "60px"}}>{vid.tracks.items.map((ele,ind)=>{
+                {/* <td style={{ borderSpacing: "60px"}}>{vid.tracks.items.map((ele,ind)=>{
                     return <tr>{ind+1}</tr>
                 })}</td>
                 <td style={{borderSpacing: "15px"}}>{vid.tracks.items.map((ele)=>{
@@ -60,7 +60,7 @@ function Details() {
             
                 <td style={{color:"gray", borderSpacing: "60px"}}>{vid.tracks.items.map((ele)=>{
                     return <tr>{((ele.data.duration.totalMilliseconds)/60000).toFixed(2)} M</tr>
-                })}</td>
+                })}</td> */}
             </tr>
         </table>
     </div>
