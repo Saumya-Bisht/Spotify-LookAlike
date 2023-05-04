@@ -4,6 +4,7 @@ import { MdOutlineWatchLater} from 'react-icons/md';
 function Details() {
 
     let[vid,setVid]=useState({})
+    let[butt,setButt]=useState([])
     useEffect(()=>{
         fetch("https://spotify23.p.rapidapi.com/search/?q=${q}&type=multi",{
             method:"GET",
@@ -29,10 +30,10 @@ function Details() {
                 textAlign:"center"
             }
             
-  return (
-    <div>
-        <h1>Your Library</h1>
-        <table style={tstyle}>
+
+            const loadata=()=>{
+                    setButt(<div>
+                         <table style={tstyle}>
             <tr style={tstyle}>
                 <th style={he}>#</th>
                 <th style={he}>Title</th>
@@ -40,7 +41,7 @@ function Details() {
                 <th style={he}><MdOutlineWatchLater/></th>
             </tr>
             <tr>
-                {/* <td style={{ borderSpacing: "60px"}}>{vid.tracks.items.map((ele,ind)=>{
+                <td style={{ borderSpacing: "60px"}}>{vid.tracks.items.map((ele,ind)=>{
                     return <tr>{ind+1}</tr>
                 })}</td>
                 <td style={{borderSpacing: "15px"}}>{vid.tracks.items.map((ele)=>{
@@ -60,9 +61,16 @@ function Details() {
             
                 <td style={{color:"gray", borderSpacing: "60px"}}>{vid.tracks.items.map((ele)=>{
                     return <tr>{((ele.data.duration.totalMilliseconds)/60000).toFixed(2)} M</tr>
-                })}</td> */}
+                })}</td>
             </tr>
         </table>
+                    </div>)
+            }
+  return (
+    <div>
+        <h1>Your Library</h1>
+        <button style={{backgroundColor:"white",border:"1px solid white",margin:"15px",fontWeight:"bold",cursor:"pointer"}} onClick={loadata}>Load Data</button>
+        <div>{butt}</div>
     </div>
   )
 }

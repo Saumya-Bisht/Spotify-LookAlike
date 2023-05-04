@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 
 function Home() {
     let[vid,setVid]=useState({})
+    let[butt,setButt]=useState([])
     useEffect(()=>{
         fetch("https://spotify23.p.rapidapi.com/search/?q=${q}&type=multi",{
             method:"GET",
@@ -30,11 +31,10 @@ let psty={
   marginTop:"-7%",
   
 }
-  return (
-    <div style={{backgroundColor:"#212121"}}>
-        <h2>Popular Playlists</h2>
-        {console.log(vid)}
-         {/* <div style={{display:"flex",flexWrap:"wrap"}}>{Array.isArray(vid.playlists.items) && vid.playlists.items?.map((ele)=>{
+
+const loadata=()=>{
+  setButt(<>
+     <div style={{display:"flex",flexWrap:"wrap"}}>{Array.isArray(vid.playlists.items) && vid.playlists.items?.map((ele)=>{
             return (<div style={{boxShadow:"0px 0px 10px 3px #121212",borderRadius:"10px",padding:"10px",margin:"10px",width:"13vw",display:"flex",flexDirection:"column"}}>
             <Link style={linksty} to="/details"><img  width="100%" src={ele.data.images.items[0].sources[0].url} alt="img"/>
                <p> {ele.data.name} </p>
@@ -67,7 +67,15 @@ let psty={
                
                
                )
-       })}</div>  */}
+       })}</div> 
+  </>)
+}
+  return (
+    <div style={{backgroundColor:"#212121"}}>
+        <h2>Popular Playlists</h2>
+        <button style={{backgroundColor:"white",border:"1px solid white",margin:"15px",fontWeight:"bold",cursor:"pointer"}} onClick={loadata}>Load Data</button>
+        {console.log(vid)}
+        <div>{butt}</div>
      
     </div>
   )
