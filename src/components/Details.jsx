@@ -16,7 +16,7 @@ function Details() {
     numberOfTopResults: '5'
   },
   headers: {
-    'X-RapidAPI-Key': 'a7cd13a03bmsh2a04d106eaead2dp1c6c2fjsn4a7170c7091d',
+    'X-RapidAPI-Key': '87fa792f96msh89f87e9bcf7ac40p11313ajsnc767ab8e53ee',
     'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
   }
         }).then((res)=>res.json()).then((data)=>{setVid(data);console.log(data)})
